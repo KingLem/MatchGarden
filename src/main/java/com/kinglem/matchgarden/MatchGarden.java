@@ -6,7 +6,10 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
@@ -17,16 +20,18 @@ public class MatchGarden {
     public static final String MODID = "matchgarden";
     public static final String MODNAME = "Lem's Match Garden";
     public static final String VERSION = "0.0.1";
-    public static MatchGarden INSTANCE;
 
     public static com.kinglem.matchgarden.TileBlock block;
 
     @Instance(value = MatchGarden.MODID)
-    public static MatchGarden instance;
+    public static MatchGarden INSTANCE;
 
+    @SidedProxy(clientSide="com.kinglem.matchgarden.ClientProxy", serverSide="com.kinglem.matchgarden.ServerProxy")
+    public static CommonProxy proxy;
 
     @EventHandler
-    public void preInit(FMLInitializationEvent event){
+    public void preInit(FMLPreInitializationEvent event){
+        this.proxy.preInit(event);
         //event handler registry
         FMLCommonHandler.instance().bus().register(INSTANCE);
         MinecraftForge.EVENT_BUS.register(INSTANCE);
@@ -43,6 +48,7 @@ public class MatchGarden {
 
     @EventHandler
     public void init(FMLInitializationEvent event){
+        this.proxy.init(event);
         //Register recipes
 
         //@TODO: TileBlock recipe
@@ -54,7 +60,8 @@ public class MatchGarden {
     }
 
     @EventHandler
-    public void postInit(FMLInitializationEvent event){
+    public void postInit(FMLPostInitializationEvent event){
+        this.proxy.postInit(event);
 
     }
 }
