@@ -8,10 +8,4 @@ import net.minecraft.item.Item;
  */
 public class WoodSprite extends Item {
 
-    public WoodSprite(String unlocalizedName){
-        super();
-
-        this.setUnlocalizedName(unlocalizedName);
-        this.setCreativeTab(CreativeTabs.tabMaterials);
-    }
 }

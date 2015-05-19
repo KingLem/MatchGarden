@@ -10,10 +10,14 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  */
 public final class GardenItems {
 
-    public static Item gardenItem;
+    public static Item woodSprite;
 
-    public static final void createItems(){
-        GameRegistry.registerItem(gardenItem = new WoodSprite("wood_sprite"), "wood_sprite");
+    public static void init() {
+        woodSprite = new Item().setUnlocalizedName("wood_sprite").setCreativeTab(CreativeTabs.tabMaterials);
+    }
+
+    public static final void registerItems(){
+        GameRegistry.registerItem(woodSprite, woodSprite.getUnlocalizedName());
 
     }
 }

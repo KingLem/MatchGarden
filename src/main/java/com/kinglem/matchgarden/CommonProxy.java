@@ -11,7 +11,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class CommonProxy {
 
     public void preInit(FMLPreInitializationEvent e) {
-        GardenItems.createItems();
+        GardenItems.init();
+        GardenItems.registerItems();
     }
 
     public void init(FMLInitializationEvent e) {

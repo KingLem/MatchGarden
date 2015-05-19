@@ -11,12 +11,12 @@ import net.minecraft.item.Item;
 public final class ItemRenderRegister {
 
     public static void registerItemRenderer() {
-        reg(GardenItems.gardenItem);
+        reg(GardenItems.woodSprite);
     }
 
     public static void reg(Item item){
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-                .register(GardenItems.gardenItem, 0, new ModelResourceLocation("matchgarden:Wood_Sprite", "inventory"));
+                .register(GardenItems.woodSprite, 0, new ModelResourceLocation("matchgarden:wood_sprite", "inventory"));
 
     }
 }
