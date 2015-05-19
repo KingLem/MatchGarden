@@ -21,7 +21,7 @@ public class MatchGarden {
     public static final String MODNAME = "Lem's Match Garden";
     public static final String VERSION = "0.0.1";
 
-    public static com.kinglem.matchgarden.TileBlock block;
+    public static com.kinglem.matchgarden.blocks.TileBlock block;
 
     @Instance(value = MatchGarden.MODID)
     public static MatchGarden INSTANCE;
@@ -35,12 +35,12 @@ public class MatchGarden {
         //event handler registry
         FMLCommonHandler.instance().bus().register(INSTANCE);
         MinecraftForge.EVENT_BUS.register(INSTANCE);
-
+        /*
         //Register the TileBlock
-        block = new com.kinglem.matchgarden.TileBlock();
+        block = new com.kinglem.matchgarden.blocks.TileBlock();
 
         GameRegistry.registerBlock(block, "Garden Tile");
-
+        */
         //Register items
 
         //@TODO: Sprites

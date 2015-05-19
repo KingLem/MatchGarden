@@ -1,5 +1,6 @@
 package com.kinglem.matchgarden;
 
+import com.kinglem.matchgarden.items.GardenItems;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -10,7 +11,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class CommonProxy {
 
     public void preInit(FMLPreInitializationEvent e) {
-
+        GardenItems.createItems();
     }
 
     public void init(FMLInitializationEvent e) {

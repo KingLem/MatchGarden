@@ -8,9 +8,6 @@ import net.minecraft.tileentity.TileEntity;
 public class TileEntityGarden extends TileEntity {
     private boolean noSunlight;
 
-
-
-    @Override
     public void updateEntity(){
 
     }

@@ -1,5 +1,6 @@
-package com.kinglem.matchgarden;
+package com.kinglem.matchgarden.blocks;
 
+import com.kinglem.matchgarden.MatchGarden;
 import com.kinglem.matchgarden.blocks.Behavior;
 import com.kinglem.matchgarden.blocks.DefaultTile;
 import net.minecraft.block.Block;
@@ -24,6 +25,10 @@ public class TileBlock extends Block{
         setCreativeTab(CreativeTabs.tabBlock);
 
         setBehavior(DefaultTile.getInstance());
+    }
+
+    public static final void init(){
+
     }
 
     public String getName(){
